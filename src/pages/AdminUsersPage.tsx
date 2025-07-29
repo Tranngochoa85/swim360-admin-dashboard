@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { getUsers, updateUserRole } from '../api/adminApi'; // Thêm updateUserRole
+import { useState, useEffect } from 'react';
+import { getUsers, updateUserRole } from '../api/adminApi';
 import { Link } from 'react-router-dom';
 
 interface User {
@@ -30,7 +30,7 @@ export const AdminUsersPage = () => {
   useEffect(() => {
     fetchUsers();
   }, []);
-
+  
   const handleEditClick = (user: User) => {
     setEditingUserId(user.id);
     setSelectedRole(user.role);
