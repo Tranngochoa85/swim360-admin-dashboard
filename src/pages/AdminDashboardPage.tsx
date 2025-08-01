@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react'; // Thêm useState, useEffect
 import { Link, useNavigate } from 'react-router-dom';
 import { getPendingPools, approvePool, rejectPool } from '../api/adminApi';
 
-interface Pool { // Khai báo kiểu dữ liệu cho pool
+// Khai báo kiểu dữ liệu cho pool
+interface Pool {
   id: number;
   name: string;
   address: string;
