@@ -1,8 +1,8 @@
+import { useState, useEffect } from 'react'; // Thêm useState, useEffect
 import { Link, useNavigate } from 'react-router-dom';
 import { getPendingPools, approvePool, rejectPool } from '../api/adminApi';
 
-// Interface Pool này khớp với dữ liệu API trả về
-interface Pool {
+interface Pool { // Khai báo kiểu dữ liệu cho pool
   id: number;
   name: string;
   address: string;
@@ -93,7 +93,7 @@ export const AdminDashboardPage = () => {
             </tr>
           </thead>
           <tbody>
-            {pendingPools.map(pool => (
+            {pendingPools.map((pool: Pool) => ( // Thêm kiểu dữ liệu cho pool
               <tr key={pool.id} style={{ borderBottom: '1px solid #eee' }}>
                 <td style={{ padding: '8px' }}>{pool.id}</td>
                 <td style={{ padding: '8px' }}>{pool.name}</td>
