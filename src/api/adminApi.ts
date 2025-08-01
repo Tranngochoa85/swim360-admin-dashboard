@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://127.0.0.1:8000'; // Hoặc IP mạng của bạn
+const API_URL = 'http://172.20.10.2:8000'; // Hoặc IP mạng của bạn
 
 // --- HÀM HELPER ĐỂ LẤY HEADERS XÁC THỰC ---
 const getAuthHeaders = () => {

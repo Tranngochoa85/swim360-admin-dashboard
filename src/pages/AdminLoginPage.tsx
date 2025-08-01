@@ -1,26 +1,25 @@
-import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
-import axios from 'axios'; // Import thư viện axios
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export const AdminLoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Cấu hình dữ liệu gửi đi dạng form
     const params = new URLSearchParams();
     params.append('username', email);
     params.append('password', password);
 
     try {
-      // Gửi request đến API backend
-      const response = await axios.post('http://172.20.10.2:8000/login', params);
+      // LƯU Ý: Thay thế '127.0.0.1' bằng IP mạng của bạn nếu cần
+      const response = await axios.post('http://127.0.0.1:8000/auth/login', params);
 
       const accessToken = response.data.access_token;
-      console.log('Admin đăng nhập thành công! Token:', accessToken);
-      localStorage.setItem('adminAccessToken', accessToken); // Lưu token của Admin
+      localStorage.setItem('adminAccessToken', accessToken);
 
       navigate('/');
 

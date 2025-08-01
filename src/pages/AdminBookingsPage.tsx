@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { getBookings } from '../api/adminApi';
 import { Link } from 'react-router-dom';
 
-// Định nghĩa các kiểu dữ liệu lồng nhau
+// Định nghĩa các kiểu dữ liệu lồng nhau cho một Khóa học
 interface UserSimple {
   id: number;
   full_name: string | null;
@@ -59,6 +59,7 @@ export const AdminBookingsPage = () => {
           {bookings.length > 0 ? bookings.map(booking => (
             <tr key={booking.id} style={{ borderBottom: '1px solid #eee' }}>
               <td style={{ padding: '8px' }}>{booking.id}</td>
+              {/* Truy cập vào các trường dữ liệu lồng nhau */}
               <td style={{ padding: '8px' }}>{booking.learner.email}</td>
               <td style={{ padding: '8px' }}>{booking.coach.email}</td>
               <td style={{ padding: '8px' }}>{booking.pool.name}</td>
