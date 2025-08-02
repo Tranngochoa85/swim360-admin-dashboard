@@ -78,6 +78,7 @@ export const AdminDashboardPage = () => {
       <div style={{ margin: '20px 0', display: 'flex', gap: '10px' }}>
         <Link to="/users"><button>Manage Users</button></Link>
         <Link to="/bookings"><button>Manage Bookings</button></Link>
+         <Link to="/transactions"><button>Manage Transactions</button></Link>
       </div>
       <hr />
       <h3>Hồ bơi đang chờ duyệt ({pendingPools.length})</h3>

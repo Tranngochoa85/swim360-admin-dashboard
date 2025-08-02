@@ -59,3 +59,9 @@ export const getBookings = async () => {
   });
   return response.data;
 };
+export const getTransactions = async () => {
+  const response = await axios.get(`${API_URL}/admin/transactions/`, {
+    headers: getAuthHeaders()
+  });
+  return response.data;
+};
